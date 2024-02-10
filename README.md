@@ -33,5 +33,7 @@ There is also a `style-guide.md` file containing the information about the desig
 
 I love receiving feedback! I am always looking to improve and work on adding more features to my projects. So if you have anything you'd like to mention, please email hi at [my work email](saarsaach30@gmail.com).
 
+This project is completely free. Please share it with anyone who will find it useful.
+
 
 ### ***Have fun coding!*** 🚀
