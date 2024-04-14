@@ -1,36 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Todo app</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-
-  Todo
-
-  <!-- Add dynamic number --> items left
-
-  All
-  Active 
-  Completed
-
-  Clear Completed
-
-  Drag and drop to reorder list
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="normalize.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.scss" />
+    <title>Todo app</title>
+  </head>
+  <body>
+    <div class="app__wrapper">
+      <div class="background"></div>
+      <!-- App Part -->
+      <section class="app">
+        <div class="container">
+          <!-- Header -->
+          <header class="app__header">
+            <h2 class="app__logo">ToDo</h2>
+            <button class="app__theme-toggle btn">
+              <img
+                class="app__theme-toggle--img-light"
+                src="images/icon-moon.svg"
+                alt="Theme icon"
+              />
+              <img
+                class="app__theme-toggle--img-dark"
+                src="images/icon-sun.svg"
+                alt="Theme icon"
+              />
+            </button>
+          </header>
+          <!-- Form -->
+          <div class="app__search-bar">
+            <form class="app__search-bar__content">
+              <button type="button"
+                class="app__search-bar__button btn"
+                aria-label="Search button"
+              ></button>
+              <input
+                id="search-input"
+                class="app__search-bar__input"
+                type="text"
+                placeholder="Create a new todo.."
+                required
+              />
+            </form>
+          </div>
+          <!-- TaskList -->
+          <div class="app__task-list">
+            <ul class="app__task-list__list"></ul>
+            <div class="app__task-list__footer">
+              <p class="app__task-list__footer__items">
+                <span class="items--number">0</span>items left
+              </p>
+              <div class="app__task-list__footer__buttons">
+                <button class="all-button blue--button">All</button>
+                <button class="active-button">Active</button>
+                <button class="complete-button">Completed</button>
+              </div>
+              <button class="clear-button">Clear Completed</button>
+            </div>
+          </div>
+        </div>
+        <!-- Footer Part -->
+        <section class="footer">
+          <p>Drag and drop to reorder list</p>
+        </section>
+      </section>
+    </div>
+    <script src="script.js" type="module"></script>
+  </body>
 </html>
