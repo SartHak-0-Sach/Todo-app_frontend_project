@@ -1,0 +1,47 @@
+body {
+  background-color: var(--Light-Grayish-Blue);
+}
+
+form {
+  background-color: var(--Very-Light-Gray);
+}
+input[type="checkbox"]::after {
+  content: "";
+  display: block;
+  position: absolute;
+  text-align: center;
+  width: 1.6em;
+  height: 1.6em;
+  border-radius: 50%;
+  left: 1px;
+  top: 1px;
+  background: var(--Very-Light-Gray);
+}
+
+.todo-items {
+  background-color: var(--Very-Light-Gray);
+}
+
+:is(.empty-message, .todo-text) {
+  color: var(--Very-Dark-Grayish-Blue);
+  font-size: 1em;
+}
+
+.drag-drop-div {
+  color: #bcbcc3;
+  background-color: var(--Light-Grayish-Blue);
+}
+
+.status-div__middle-div--flex button:hover,
+.status-div button:hover {
+  color: #3a3d50;
+}
+
+.status-div__middle-div {
+  color: #bcbcc3;
+  background-color: var(--Very-Light-Gray);
+}
+
+input#todo {
+  color: var(--Dark-Grayish-Blue);
+}

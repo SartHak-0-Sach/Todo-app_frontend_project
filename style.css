@@ -1,0 +1,307 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --Bright-Blue: hsl(220, 98%, 61%);
+  --Check-Background: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
+
+  /* ### Light Theme */
+
+  --Very-Light-Gray: hsl(0, 0%, 98%);
+  --Very-Light-Grayish-Blue: hsl(236, 33%, 92%);
+  --Light-Grayish-Blue: hsl(233, 11%, 84%);
+  --Dark-Grayish-Blue: hsl(236, 9%, 61%);
+  --Very-Dark-Grayish-Blue: hsl(235, 19%, 35%);
+
+  /* ### Dark Theme */
+
+  --Very-Dark-Blue: hsl(235, 21%, 11%);
+  --Very-Dark-Desaturated-Blue: hsl(235, 24%, 19%);
+  --Light-Grayish-Blue: hsl(234, 39%, 85%);
+  --Light-Grayish-Blue: hsl(236, 33%, 92%); /*(hover)*/
+  --Dark-Grayish-Blue: hsl(234, 11%, 52%);
+  --Very-Dark-Grayish-Blue: hsl(233, 14%, 35%);
+  --Very-Dark-Grayish-Blue: hsl(237, 14%, 26%);
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1rem;
+  min-height: 100vh;
+  margin: 2.9rem 1.5rem;
+  background-color: var(--Very-Dark-Blue);
+  background-image: url("images/bg-mobile-dark.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 26.3%;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header h1 {
+  font-size: 28px;
+  text-transform: uppercase;
+  letter-spacing: 9px;
+  color: var(--Very-Light-Gray);
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: inherit;
+  cursor: pointer;
+  color: inherit;
+}
+header img {
+  width: 20px;
+  display: block;
+}
+
+main {
+  margin-top: 34px;
+}
+li {
+  list-style: none;
+}
+
+form {
+  width: 100%;
+  border-radius: 6px;
+  background-color: #25273c;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 28px;
+}
+.todo-div {
+  flex: 5;
+}
+
+input[disabled] {
+  cursor: not-allowed;
+}
+
+.checkbox-div {
+  display: flex;
+}
+.todo-item button {
+  display: none;
+}
+
+.label {
+  position: absolute;
+  left: -9999px;
+}
+input#todo {
+  width: 100%;
+  color: var(--Light-Grayish-Blue);
+  background-color: transparent;
+  border: none;
+  padding: 24px 2rem 24px 1rem;
+  outline: none;
+  font-size: 1.125em;
+}
+
+.checkbox-round {
+  width: 1.9em;
+  height: 1.9em;
+  border: 1px solid #5d5f74;
+  border-radius: 50%;
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkbox-round:checked + p.todo-text {
+  text-decoration: line-through;
+  color: #404153;
+}
+.todo-item [type="checkbox"]::before {
+  content: url("images/icon-check.svg");
+  display: none;
+  position: absolute;
+  text-align: center;
+  width: 1.9em;
+  height: 1.9em;
+  border-radius: 50%;
+  left: -1px;
+  top: -1px;
+  background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}
+input[type="checkbox"]::after {
+  content: "";
+  display: block;
+  position: absolute;
+  text-align: center;
+  width: 1.6em;
+  height: 1.6em;
+  border-radius: 50%;
+  background: #25273c;
+}
+input[type="checkbox"]:hover::before {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input[type="checkbox"]:checked::before {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+input[type="checkbox"]:checked::after {
+  display: none;
+}
+
+.status-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 28px;
+  font-size: 0.6em;
+  color: var(--Dark-Grayish-Blue);
+}
+.status-div p {
+  font-size: 12px;
+}
+
+.status-div__middle-div {
+  padding: 1rem;
+  color: var(--Dark-Grayish-Blue);
+  color: #5d5f74;
+  background-color: #25273c;
+  margin-top: 22px;
+  border-radius: 8px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-weight: 700;
+}
+.status-div__middle-div button {
+  font-size: 14px;
+}
+.status-div__middle-div button:focus,
+.status-div__middle-div--flex button:focus,
+.status-div__middle-div--flex button:active {
+  color: var(--Bright-Blue);
+}
+.todosList {
+  padding-left: 12px;
+}
+.todo-items {
+  background-color: var(--Very-Dark-Desaturated-Blue);
+  margin-top: 24px;
+  border-radius: 4px;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 2rem 18px 1rem;
+  border-bottom: 1px solid var(--Dark-Grayish-Blue);
+}
+/* This styling will prevent page to move when cross image appear after hovering over it. 
+ by setting fixed height , The content will not move- nice trick 😉 */
+.todo-item button {
+  height: 1rem;
+}
+.hide {
+  display: none;
+}
+.checkbox-div {
+  display: flex;
+  gap: 0.9em;
+  align-items: center;
+  justify-content: center;
+}
+:is(.empty-message, .todo-text) {
+  color: #b6b8cf;
+  font-size: 1em;
+}
+
+.empty-message {
+  text-align: center;
+  padding-top: 2em;
+}
+
+.drag-drop-div {
+  padding: 1rem;
+  color: var(--Dark-Grayish-Blue);
+  color: #404153;
+  text-align: center;
+  background-color: #161620;
+  margin-top: 2rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.todo-item:hover > button {
+  cursor: pointer;
+  display: block;
+}
+.draggable {
+  background-color: #5742c156;
+}
+.status-div__middle-div--flex button:hover,
+.status-div button:hover {
+  color: var(--Light-Grayish-Blue);
+}
+
+/* Desktop design */
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 550px;
+    margin: 0 auto;
+    position: relative;
+    left: 10px;
+  }
+  body {
+    background-color: var(--Very-Dark-Blue);
+    background-image: url("images/bg-desktop-dark.jpg ");
+    background-repeat: no-repeat;
+    background-size: 100% 29.1%;
+  }
+  header {
+    margin-top: 5rem;
+  }
+  header h1 {
+    font-size: 40px;
+    letter-spacing: 15px;
+  }
+  header img {
+    width: 25px;
+    position: relative;
+    left: -6px;
+    top: -5px;
+  }
+  main {
+    margin-top: 38px;
+  }
+  .status-div__middle-div {
+    display: none;
+  }
+  .status-div__middle-div--flex {
+    display: flex;
+    gap: 1rem;
+    font-weight: 700;
+  }
+}
